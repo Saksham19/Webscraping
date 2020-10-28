@@ -388,24 +388,24 @@ df4 = df4.dropna()
 print(len(df4.DATE))
 print(len(set(df4.DATE)))
 df4.to_csv(cwd+"/FINAL/IGNORE/SPGSCITR_FINAL_IGNORE.csv",index=False,header=True,index_label="DATE")
-df_sp = pd.read_csv(cwd+"/FINAL/IGNORE/SPGSCITR_FINAL_IGNORE.csv",parse_dates=["DATE"],dayfirst=True,index_col="DATE")
-df_sp.drop_duplicates(inplace=True)
-df_sp.to_csv(cwd+"/FINAL/SPGSCITR_FINAL.csv")
-df_sp.to_csv(cwd+"/BASE/SPGSCITR_BASE.csv")
+df_spg = pd.read_csv(cwd+"/FINAL/IGNORE/SPGSCITR_FINAL_IGNORE.csv",parse_dates=["DATE"],dayfirst=True,index_col="DATE")
+df_spg.drop_duplicates(inplace=True)
+df_spg.to_csv(cwd+"/FINAL/SPGSCITR_FINAL.csv")
+df_spg.to_csv(cwd+"/BASE/SPGSCITR_BASE.csv")
 
-df_sp = pd.read_csv(cwd+"/FINAL/SPGSCITR_FINAL.csv")
-df_sp['DATE'] = pd.to_datetime(df_sp['DATE'])
-df_sp= df_sp.set_index('DATE') 
-df_sp2=df_sp.drop_duplicates(inplace=False)
-df_sp2 = df_sp2[~df_sp2.index.duplicated()]
+df_spg = pd.read_csv(cwd+"/FINAL/SPGSCITR_FINAL.csv")
+df_spg['DATE'] = pd.to_datetime(df_spg['DATE'])
+df_spg= df_spg.set_index('DATE') 
+df_spg2=df_spg.drop_duplicates(inplace=False)
+df_spg2 = df_spg2[~df_spg2.index.duplicated()]
 
-df_sp2 = df_sp2.resample('D').asfreq()
+df_spg2 = df_spg2.resample('D').asfreq()
 
 
-df_sp2= df_sp2.interpolate(method='linear', axis=0).ffill().bfill()
+df_spg2= df_spg2.interpolate(method='linear', axis=0).ffill().bfill()
 
-df_sp2.to_csv(cwd+"/FINAL/SPGSCITR_FINAL.csv")
-df_sp2.to_csv(cwd+"/BASE/SPGSCITR_BASE.csv")
+df_spg2.to_csv(cwd+"/FINAL/SPGSCITR_FINAL.csv")
+df_spg2.to_csv(cwd+"/BASE/SPGSCITR_BASE.csv")
 
 
 ##################################################REET###########################################################################################
@@ -764,7 +764,7 @@ df_cc2.to_csv(cwd+"/BASE/CCBTC_BASE.csv")
 
 ################################################################################COMBINED_EXCEL######################################################
 
-new = pd.concat([df_ma2,df_malc2,df_mamc2,df_masc2,df_vg2,df_cp2,df_sp2,df_rt2,df_ds2,df_gd2,df_vx2,df_ut2,df_sp2,df_cc2], axis=1) 
+new = pd.concat([df_ma2,df_malc2,df_mamc2,df_masc2,df_vg2,df_cp2,df_spg2,df_rt2,df_ds2,df_gd2,df_vx2,df_ut2,df_sp2,df_cc2], axis=1) 
 new.to_csv(cwd+"/COMBINED/RAW_DATA.csv")
 
 

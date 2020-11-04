@@ -252,7 +252,7 @@ url = "https://rapidapi.p.rapidapi.com/market/get-chart"
 querystring = {"interval":"m3","id":"SPGSCITR:IND"}
 
 headers = {
-    'x-rapidapi-key': "dd4e4d0869msh30007d9d5e5d0abp133b50jsn1247da1d4fa9",
+    'x-rapidapi-key': "insert-key",
     'x-rapidapi-host': "bloomberg-market-and-financial-news.p.rapidapi.com"
     }
 

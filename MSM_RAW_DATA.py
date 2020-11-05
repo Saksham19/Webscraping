@@ -30,7 +30,7 @@ date_today=date.today()-datetime.timedelta(50)
 
 
 ##############################################################################MVDA###########################################################################################################################################################
-with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDA&limit=50&api_key=599a7777686b216e65e259ad35301659aae87d7f7d5a94cd43a791aac8d3d066") as url:
+with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDA&limit=50&api_key=insert_key") as url:
     data = json.loads(url.read().decode())
     
 
@@ -62,7 +62,7 @@ df_ma2.to_csv(cwd+"/BASE/MVDA_BASE.csv",index=True,index_label="DATE")
 
 
 ################################################################MVDALC####################################################################
-with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDALC&limit=50&api_key=599a7777686b216e65e259ad35301659aae87d7f7d5a94cd43a791aac8d3d066") as url:
+with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDALC&limit=50&api_key=insert_key") as url:
     data = json.loads(url.read().decode())
     
 
@@ -97,7 +97,7 @@ df_malc2.to_csv(cwd+"/BASE/MVDALC_BASE.csv",index=True,index_label="DATE")
 
 ##########################################################MVDAMC###############################################################################
 
-with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDAMC&limit=50&api_key=599a7777686b216e65e259ad35301659aae87d7f7d5a94cd43a791aac8d3d066") as url:
+with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDAMC&limit=50&api_key=insert_key") as url:
     data = json.loads(url.read().decode())
     
 
@@ -130,7 +130,7 @@ df_mamc2.to_csv(cwd+"/BASE/MVDAMC_BASE.csv",index=True,index_label="DATE")
 
 #########################################################################################MVDASC#####################################################################
 
-with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDASC&limit=50&api_key=599a7777686b216e65e259ad35301659aae87d7f7d5a94cd43a791aac8d3d066") as url:
+with urllib.request.urlopen("https://min-api.cryptocompare.com/data/index/histo/day?indexName=MVDASC&limit=50&api_key=insert_key") as url:
     data = json.loads(url.read().decode())
     
 
